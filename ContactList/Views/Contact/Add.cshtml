@@ -1,0 +1,32 @@
+﻿@model Contact
+
+<h2 class="mt-2">Add New Contact</h2>
+
+<div class="mt-2">
+    @using (Html.BeginForm("Add", "Contact", FormMethod.Post))
+    {
+
+        <div class="form-group">
+            @Html.LabelFor(contact => contact.Name)
+            @Html.EditorFor(contact => contact.Name,null,new {htmlAttributes = new {@class="form-control"}})
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(contact => contact.PhoneNumber)
+            @Html.EditorFor(contact => contact.PhoneNumber,null,new {htmlAttributes = new {@class="form-control"}})
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(contact => contact.Email)
+            @Html.EditorFor(contact => contact.Email,null,new {htmlAttributes = new {@class="form-control"}})
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(contact => contact.Website)
+            @Html.EditorFor(contact => contact.Website,null,new {htmlAttributes = new {@class="form-control"}})
+        </div>
+
+
+        <button class="btn btn-primary mt-2" type="submit">Add</button>
+    }
+</div>

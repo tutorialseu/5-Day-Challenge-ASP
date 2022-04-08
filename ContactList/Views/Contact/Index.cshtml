@@ -1,0 +1,66 @@
+﻿@model List<Contact>
+
+@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+
+<h2 class="mt-2">Contacts</h2>
+
+@Html.ActionLink("Add a New Contact", "Add", "Contact")
+
+<table class="mt-2 table table-striped table-bordered">
+
+    <thead class="table-dark">
+        <tr>
+            <th>
+                Id
+            </th>
+            <th>
+                Name
+            </th>
+            <th>
+                Phone
+            </th>
+            <th>
+                Email
+            </th>
+            <th>
+                Website
+            </th>
+            <th>
+                Actions
+            </th>
+        </tr>
+    </thead>
+
+    <tbody>
+        @foreach (Contact contact in Model)
+        {
+            <tr>
+                <td>
+                    @contact.Id
+                </td>
+                  <td>
+                    @contact.Name
+                </td>
+                  <td>
+                    @contact.PhoneNumber
+                </td>
+                  <td>
+                    @contact.Email
+                </td>
+                  <td>
+                    @contact.Website
+                </td>
+                <td>
+                    @Html.ActionLink("Details","Details", "Contact", new {contactId = contact.Id})
+                </td>
+            </tr>
+        }
+    </tbody>
+
+
+
+</table>

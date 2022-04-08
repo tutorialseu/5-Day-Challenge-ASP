@@ -1,0 +1,21 @@
+﻿@model Contact
+
+<h2 class="mt-2">Contact Details</h2>
+
+
+<div class="form-group mt-2">
+    @Html.EditorFor(contact => contact,null,"contact",new {htmlAttributes = new {@class="form-control",@readonly="true" }})
+</div>
+
+<div class="mt-2">
+    @using (Html.BeginForm("Delete", "Contact", FormMethod.Post))
+    {
+
+        <div class="form-group">
+            @Html.EditorFor(contact => contact.Id,null,"contactId",new {htmlAttributes = new {@class="form-control",@hidden="true" }})
+        </div>
+
+
+        <button class="btn btn-danger mt-2" type="submit">Delete</button>
+    }
+</div>
